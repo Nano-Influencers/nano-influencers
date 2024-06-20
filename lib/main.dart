@@ -23,25 +23,25 @@ class MyApp extends StatelessWidget {
     return ResponsiveSizer(builder: (context, orientation, screenType) {
       return MaterialApp(
           title: 'Nano Influencers',
-          theme: ThemeData.from(
-            colorScheme: const ColorScheme.light(),
-          ).copyWith(
-              textButtonTheme: TextButtonThemeData(
-                style: TextButton.styleFrom(
+          theme: ThemeData(
+            fontFamily: 'Poppins',
+            primarySwatch: Colors.blue,
+            elevatedButtonTheme: ElevatedButtonThemeData(
+              style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.white,
-                ),
-              ),
-              elevatedButtonTheme: ElevatedButtonThemeData(
-                style: ElevatedButton.styleFrom(
-                    foregroundColor: Colors.white,
-                    backgroundColor: Colors.blue[900]),
-              ),
-              outlinedButtonTheme: OutlinedButtonThemeData(
+                  backgroundColor: Colors.blue[900]),
+            ),
+            outlinedButtonTheme: OutlinedButtonThemeData(
                 style: OutlinedButton.styleFrom(
-                  foregroundColor: Colors.white,
-                  backgroundColor: Colors.blue[900],
-                ),
-              )),
+              foregroundColor: Colors.white,
+              backgroundColor: Colors.blue[900],
+            )),
+            textButtonTheme: TextButtonThemeData(
+              style: TextButton.styleFrom(
+                foregroundColor: Colors.white,
+              ),
+            ),
+          ),
           home: StreamProvider<User?>.value(
               value: FirebaseAuth.instance.authStateChanges(),
               initialData: null,

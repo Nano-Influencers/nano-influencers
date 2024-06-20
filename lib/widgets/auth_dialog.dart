@@ -146,7 +146,7 @@ class _AuthDialogState extends State<AuthDialog> {
     return Dialog(
       child: SingleChildScrollView(
         child: Container(
-          padding: const EdgeInsets.fromLTRB(50, 16, 50, 16),
+          padding: const EdgeInsets.fromLTRB(30, 0, 35, 10),
           width: MediaQuery.of(context).size.width * 0.3,
           height: MediaQuery.of(context).size.height * 0.6,
           child: Column(
@@ -155,12 +155,13 @@ class _AuthDialogState extends State<AuthDialog> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Center(
-                child: Text(
-                  'The Nano Influencers',
-                  style: TextStyle(color: Colors.blue[900], fontSize: 18),
+                child: SizedBox(
+                  child: Image.asset(
+                    'assets/logo.png',
+                    fit: BoxFit.fill,
+                  ),
                 ),
               ),
-              const SizedBox(height: 30),
               const Text('Email address',
                   style: TextStyle(fontWeight: FontWeight.bold)),
               emailField(),
